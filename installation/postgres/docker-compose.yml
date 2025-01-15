@@ -25,7 +25,6 @@ services:
         - "33060:3306"
     volumes:
      - postgresData:/var/lib/postgresql/data
-    network_mode: bridge
     cap_drop:
       - MKNOD
   wacore:
@@ -41,7 +40,6 @@ services:
       ORCHESTRATION: DOCKER-COMPOSE
     depends_on:
       - "db"
-    network_mode: bridge
     cap_drop:
       - MKNOD
   waweb:
